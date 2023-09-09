@@ -5,6 +5,7 @@ import HomeSection from '../HomeSection/HomeSection'
 import RightPart from '../RightPart/RightPart'
 import { Route, Routes } from 'react-router-dom'
 import Profile from '../Profile/Profile'
+import TwitDetails from '../TwitDetails/TwitDetails'
 
 const Homepage = () => {
   return (
@@ -17,7 +18,9 @@ const Homepage = () => {
 		<Grid item xs={12} lg={6} className='px-5 lg:px-9 hidden lg:block w-full relative'>
 			<Routes>
 				<Route path="/" element={<HomeSection/>}></Route>
+				<Route path="/home" element={<HomeSection/>}></Route>
 				<Route path="/profile/:id" element={<Profile/>}></Route>
+				<Route path="/twit/:id" element={<TwitDetails/>}></Route>
 			</Routes>
 		</Grid>
 		
