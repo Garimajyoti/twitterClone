@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { useFormik } from 'formik';
-import { IconButton } from '@mui/material';
+import { IconButton, TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
@@ -23,6 +23,7 @@ const style = {
 
 export default function ProfileModal() {
   const [open, setOpen] = React.useState(false);
+  const [uploading, setUploading] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -40,7 +41,15 @@ export default function ProfileModal() {
         image:""
     },
     onSubmit:handleSubmit
-  })
+  });
+
+  const handleImageChange=(event)=>{
+    setUploading(true);
+    const {name} = event.target  //fetch image from events
+    const file = event.taget.files[0] //fetch the file which is at 0th index
+    formik.setFieldValue(name, file);
+    setUploading(false);
+  }
 
   return (
     <div>
@@ -64,7 +73,40 @@ export default function ProfileModal() {
             </div>
 
             <div className='overflow-y-scroll overflow-x-hidden h-[80vh]'>
+                <div>
+                    <div className='w-full'>
+                        <div className='relative'>
+                            <img
+                            className='w-full h-[12rem] object-cover object-center'
+                            src='https://www.searchenginejournal.com/wp-content/uploads/2022/06/image-search-1600-x-840-px-62c6dc4ff1eee-sej.png' alt=''                            
+                            />
 
+                            <input
+                            type="file"
+                            className='absolute top-0 left-0 w-full h-full opacity-0
+                            cursor-pointer'
+                            onChange={handleImageChange}
+                            name="backgroundImage"
+                            />
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div className='space-y-3'>
+                    <TextField
+                    fullWidth
+                    id="fullName"
+                    name="fullName"
+                    label="Full Name"
+                    value={formik.values.fullName}
+                    onChange={formik.handleChange} //handleChange is given my formik
+                    error={formik.touched.name && Boolean(formik.errors.fullName)}
+                    helperText={formik.touched.name && formik.errors.fullName}          
+                    />
+
+                </div>
             </div>
 
 
