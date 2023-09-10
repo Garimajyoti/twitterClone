@@ -8,6 +8,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import ReplyModal from './ReplyModal';
 
 
 const TweetCard = () => {
@@ -37,7 +38,7 @@ const TweetCard = () => {
         console.log("like tweet")
     }
     return (
-        <div className=''>
+        <React.Fragment>
             {/* <div className='flex items-center font-semibold text-gray-700 py-2'>
             <RepeatIcon/>
             <p>You Retweet</p>
@@ -133,7 +134,10 @@ const TweetCard = () => {
                 </div>
 
             </div>
-        </div>
+            <section>
+                <ReplyModal/>
+            </section>
+        </React.Fragment>
     )
 }
 
