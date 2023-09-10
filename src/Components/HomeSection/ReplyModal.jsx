@@ -91,7 +91,61 @@ export default function ReplyModal() {
                             </div>
                         </div>
                     </div>
-                    
+                    <section className={'py-10'}>
+                        <div className='flex space-x-5'>
+                            <Avatar alt="username" src="https://thumbs.dreamstime.com/b/avatar-icon-vector-male-user-person-profile-symbol-flat-color-glyph-pictogram-illustration-117610386.jpg" />
+                            <div className='w-full'>
+                                <form onSubmit={formik.handleSubmit}>
+                                    <div>
+                                        <input type="text" name="content" placeholder="What is happening ?"
+                                            className={'border-none outline-none text-xl bg -transaparent'} {...formik.getFieldProps("content")} />
+                                        {/* If any error occurs in content , show it in red color*/}
+                                        {formik.errors.content && formik.touched.content && (
+                                            <span className='text-red-500'> {formik.errors.content} </span>
+                                        )}
+                                    </div>
+
+                                    <div>
+
+                                    </div>
+
+                                    <div className='flex justify-between items-center mt-5'>
+                                        <div className='flex space-x-5 items-center'>
+                                            <label className='flex items-center space-x-2 rounded-md cursor-pointer'>
+                                                <ImageIcon className='text-[#1d9bf0]' />
+                                                <input type="file" name="imageFile" className='hidden' onChange={handleSelectImage} />
+                                            </label>
+                                            <FmdGoodIcon className='text-[#1d9bf0]' />
+                                            <TagFacesIcon className='text-[#1d9bf0]' />
+                                        </div>
+
+                                        <div>
+                                            <Button sx={{
+                                                width: "100%",
+                                                borderRadius: "20px",
+                                                paddingY: "8px",
+                                                paddingX: "20px",
+                                                bgcolor: "#1e88e5",
+                                            }}
+                                                variant="contained"
+                                                type="submit"
+                                            >
+
+
+                                                Tweet
+
+                                            </Button>
+                                        </div>
+
+
+
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </section>
                 </Box>
             </Modal>
         </div>
