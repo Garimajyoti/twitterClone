@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Avatar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -24,10 +23,7 @@ const style = {
     borderRadius: 4
 };
 
-export default function ReplyModal() {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+export default function ReplyModal({handleClose, open}) {
     const navigate = useNavigate();
     const [uploadingImage, setUploadingImage] = React.useState(false);
     const [selectImage, setSelectImage] = React.useState("");
@@ -57,7 +53,7 @@ export default function ReplyModal() {
         <div>
 
             <Modal
-                open={true}
+                open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
