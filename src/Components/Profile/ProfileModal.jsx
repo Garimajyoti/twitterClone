@@ -91,7 +91,22 @@ export default function ProfileModal({open, handleClose}) {
 
                     </div>
 
-                   
+                    <div className='w-full transform -translate-y-20 ml-4 h-[6rem]'>
+                        <div className='relative'>
+                            <Avatar
+                            sx={{width:"10rem", height:"10rem", border:"4px solid white"}}
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRCIq1WFIqckI69eGZ67ugLdfxchy96eLR7w&usqp=CAU"
+                            />
+
+                            <input
+                            className='absolute top-0 left-0 w-[10rem] h-full opacity-0 cursor-pointer'
+                            onChange={handleImageChange}
+                            name="image"
+                            type="file"
+                            />
+                        </div>
+
+                    </div>
                 </React.Fragment>
 
                 <div className='space-y-3'>
