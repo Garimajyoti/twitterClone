@@ -12,12 +12,12 @@ import ProfileModal from './ProfileModal';
 const Profile = () => {
     const [tabValue, setTabValue] = useState("1")
     const navigate = useNavigate();
+    const [openProfileModal, setOpenProfileModal]=useState(false);
+    const handleOpenProfileModel = () => setOpenProfileModal(true);
+    const handleClose = () => setOpenProfileModal(false);
     const handleBack = () => navigate(-1);
 
-    const handleOpenProfileModel = () => {
-        console.log("open profile model")
-    }
-
+ 
     const handleFollowUser = () => {
         console.log("follow user")
     }
@@ -130,7 +130,7 @@ const Profile = () => {
             </section>
 
             <section>
-                <ProfileModal/>
+                <ProfileModal handleClose={handleClose} open={openProfileModal} />
             </section>
 
 
