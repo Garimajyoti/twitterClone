@@ -20,6 +20,13 @@ const style = {
     p: 4,
 };
 
+const features=["Priortized rankings in conversations and search",
+"See approximately twice as many Tweets between ads in your For you and following timelines.",
+"Add bold and italic text in your Tweets.",
+"Post longer videos and 1080p video uploads",
+"All the existing Blue features, including Edit Tweet, Bookmark Folders and early access to new features."
+]
+
 export default function SubscriptionModal() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -60,13 +67,13 @@ export default function SubscriptionModal() {
                             </div>
 
                             <div className='space-y-3'>
-                                <div className='flex items-center space-x-5'>
+                                {features.map((item) => <div className='flex items-center space-x-5'>
                                     <FiberManualRecordIcon sx={{width:"7px", height:"7px"}}/>
                                     <p className='text-xs'>
-                                        Priortized rankings in conversation and search
+                                       {item}
                                     </p>
-                                </div>
-                                
+                                </div> )}
+
                             </div>
 
                         </div>
