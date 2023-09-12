@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const style = {
     position: 'absolute',
@@ -23,6 +24,7 @@ export default function SubscriptionModal() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [plan, setPlan] = React.useState("Annually")
 
     return (
         <div>
@@ -46,13 +48,27 @@ export default function SubscriptionModal() {
                                 <img className='w-24 h-24' src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png" alt="" />
                             </div>
 
-                            <div>
-                                <span>Anually</span>
-                                <span>SAVE 12%</span>
+                            <div className='flex justify-between border rounded-full px-5 py-3 border border-gray-500'>
+                                <div>
+                                    <span onClick={() => setPlan("Annually")} className={'${plan==="Annually"?"text-black":"text-gray-400"} cursor-pointer'}>Annually</span>
+                                    <span className='text-green-500 text-sm ml-5'>SAVE 12%</span>
+                                </div>
+
+                                <p onClick={() => setPlan("monthly")} className={'${plan==="monthly"?"text-black":"text-gray-400"} cursor-pointer'}>
+                                    Monthly
+                                </p>
                             </div>
-                            <p>
+
+                            <div className='space-y-3'>
+                                <div className='flex items-center space-x-5'>
+                                    <FiberManualRecordIcon sx={{width:"7px", height:"7px"}}/>
+                                    <p className='text-xs'>
+                                        Priortized rankings in conversation and search
+                                    </p>
+                                </div>
                                 
-                            </p>
+                            </div>
+
                         </div>
 
                     </div>
