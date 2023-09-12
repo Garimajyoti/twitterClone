@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { Button } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import SubscriptionModal from '../SubscriptionModal/SubscriptionModal';
 
 const RightPart = () => {
     const handleChangeTheme = () =>{
@@ -44,6 +45,10 @@ const RightPart = () => {
             </div>
 )} 
         </section>
+        <section>
+            <SubscriptionModal/>
+        </section>
+        
 
     </div>
   )
