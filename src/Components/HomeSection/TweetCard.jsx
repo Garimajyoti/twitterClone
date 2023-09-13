@@ -9,6 +9,7 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ReplyModal from './ReplyModal';
+import { FavoriteOutlined } from '@mui/icons-material';
 
 
 const TweetCard = () => {
@@ -109,12 +110,12 @@ const TweetCard = () => {
                             </div>
 
                             <div className={'${true? "text-pink-600" : "text-gray-600"} space-x-3 flex items-center'}>
-                                { true ?<FavoriteIcon
+                                {true ? <FavoriteIcon
                                 onClick={handleLikeRetweet}
-                                className='cursor-pointer'/> : <FavoriteBorderIcon
+                                className='cursor-pointer'/> : <FavoriteOutlined
                                 onClick={handleLikeRetweet}
                                 className='cursor-pointer'/>}
-                                <p>12</p>
+                                <p>84</p>
                             </div>
 
                             <div className='space-x-3 flex items-center text-gray-600'>

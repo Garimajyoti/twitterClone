@@ -27,17 +27,14 @@ const features=["Priortized rankings in conversations and search",
 "All the existing Blue features, including Edit Tweet, Bookmark Folders and early access to new features."
 ]
 
-export default function SubscriptionModal() {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+export default function SubscriptionModal({handleClose, open}) {
+    
     const [plan, setPlan] = React.useState("Annually")
 
     return (
         <div>
-            <Button onClick={handleOpen}>Open modal</Button>
             <Modal
-                open={true}
+                open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"

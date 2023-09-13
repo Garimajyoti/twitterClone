@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { Button } from '@mui/material';
@@ -6,6 +6,9 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import SubscriptionModal from '../SubscriptionModal/SubscriptionModal';
 
 const RightPart = () => {
+    const [openSubscriptionModal, setOpenSubscriptionModal] = useState(false);
+    const handleOpenSubscriptionModal = () => setOpenSubscriptionModal(true);
+    const handleCloseSubscriptionModal = () => setOpenSubscriptionModal(false);
     const handleChangeTheme = () =>{
         console.log("Handle change theme")
     }
@@ -24,7 +27,8 @@ const RightPart = () => {
         <section className='my-5'>
             <h1 className='text-xl font-bold'> Get Verified</h1>
             <h1 className='font-bold my-2'> Subscribe to unlock new features</h1>
-            <Button variant='contained' sx={{padding:"10px", paddingX:"20px", borderRadius:"25px"}}>
+            <Button variant='contained' sx={{padding:"10px", paddingX:"20px", borderRadius:"25px"}}
+            >
                 Get Verified
             </Button>
         </section>
@@ -46,7 +50,7 @@ const RightPart = () => {
 )} 
         </section>
         <section>
-            <SubscriptionModal/>
+            <SubscriptionModal open={openSubscriptionModal} handleClose={handleCloseSubscriptionModal}  />
         </section>
         
 
