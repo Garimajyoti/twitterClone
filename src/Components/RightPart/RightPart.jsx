@@ -28,6 +28,7 @@ const RightPart = () => {
             <h1 className='text-xl font-bold'> Get Verified</h1>
             <h1 className='font-bold my-2'> Subscribe to unlock new features</h1>
             <Button variant='contained' sx={{padding:"10px", paddingX:"20px", borderRadius:"25px"}}
+            onClick={handleOpenSubscriptionModal}
             >
                 Get Verified
             </Button>
