@@ -76,8 +76,12 @@ export default function SubscriptionModal() {
 
                             </div>
 
-                        </div>
+                            <div className='cursor-pointer flex justify-center bg-gray-900 text-white rounded-full px-5 py-3'>
+                                <span className='line-through italic'> ₹7,800.00</span>
+                                <span className='px-5'> 6,800/year </span>
+                            </div>
 
+                        </div>
                     </div>
                 </Box>
             </Modal>
